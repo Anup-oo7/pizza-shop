@@ -149,7 +149,7 @@ const PizzaDashboard = () => {
                         key={order.id}
                       >
                         <p>
-                          Order ID: {order.id} - {timeTaken}
+                          Order: {order.id} - {timeTaken}
                         </p>
                         <button onClick={() => handleMoveOrder(order.id, 'Order in Making')}>
                           Next
@@ -180,7 +180,7 @@ const PizzaDashboard = () => {
                         key={order.id}
                       >
                         <p>
-                          Order ID: {order.id} -  {timeTaken}
+                          Order: {order.id} -  {timeTaken}
                         </p>
                         <button onClick={() => handleMoveOrder(order.id, 'Order Ready')}>
                           Next
@@ -216,7 +216,7 @@ const PizzaDashboard = () => {
                         key={order.id}
                       >
                         <p>
-                          Order ID: {order.id} -  {timeTaken}
+                          Order: {order.id} -  {timeTaken}
                         </p>
                         <button onClick={() => handleMoveOrder(order.id, 'Order Picked')}>
                           Next
@@ -230,7 +230,7 @@ const PizzaDashboard = () => {
             .filter((order) => order.stage === 'Order Picked')
             .map((order) => (
               <div className='cards' key={order.id}>
-                <p>Order ID: {order.id}</p>
+                <p>Order: {order.id}</p>
               </div>
             ))}
         </td>
