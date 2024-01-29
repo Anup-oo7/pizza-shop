@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { placeOrder } from '../actions';
-
+import './orderform.css'
 // ... (other imports)
 
 const PizzaOrderForm = () => {
@@ -36,9 +36,10 @@ const PizzaOrderForm = () => {
   return (
     <div>
       <h2>Place Pizza Order</h2>
-      <label>
+    <div style={{display: 'flex', flexDirection:'row', justifyContent:'space-evenly',alignItems:'center'}}>
+      <label className='dropdown'>
         Type:
-        <select name="type" value={order.type} onChange={handleInputChange}>
+        <select className='dropdown' name="type" value={order.type} onChange={handleInputChange}>
           <option value="" disabled>Select Type</option>
           <option value="veg">Veg</option>
           <option value="non-veg">Non-veg</option>
@@ -46,7 +47,7 @@ const PizzaOrderForm = () => {
       </label>
       <label>
         Size:
-        <select name="size" value={order.size} onChange={handleInputChange}>
+        <select className='dropdown' name="size" value={order.size} onChange={handleInputChange}>
           <option value="" disabled>Select Size</option>
           <option value="Small">Small</option>
           <option value="Medium">Medium</option>
@@ -56,17 +57,18 @@ const PizzaOrderForm = () => {
       </label>
       <label>
         Base:
-        <select name="base" value={order.base} onChange={handleInputChange}>
+        <select className='dropdown' name="base" value={order.base} onChange={handleInputChange}>
           <option value="" disabled>Select Base</option>
           <option value="Thin">Thin</option>
           <option value="Thick">Thick</option>
         </select>
       </label>
-      <button onClick={handlePlaceOrder} disabled={!order.type || !order.size || !order.base}>
+      <button className='dropdown' onClick={handlePlaceOrder} disabled={!order.type || !order.size || !order.base}>
         Place Order
       </button>
      
       {orders.length >= maxOrders && <p>Not taking any order for now. Maximum orders reached.</p>}
+    </div>
     </div>
   );
 };
